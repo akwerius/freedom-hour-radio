@@ -1,17 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%= stylesheet_link_tag "main" %>
+<%= javascript_include_tag "http://code.jquery.com/jquery.js" %>
+<br>
+<table class="files" > 
+<tr>
+<td align="center">
+<h1> <font color="white"><%= @mp3.title %> </font></h1>
+</td>
+</tr>
+
+<tr>
+<td align="center">
 
 <p>
-  <b>Url:</b>
-  <%= @mp3.url %>
+<font color="white">
+  <%= link_to 'PLAY', @mp3.url, :class => 'menu' %>
 </p>
 
 <p>
-  <b>Title:</b>
-  <%= @mp3.title %>
-</p>
-
-<p>
-  <b>Artist:</b>
+  <b>Author:</b>
   <%= @mp3.artist %>
 </p>
 
@@ -34,12 +40,14 @@
 </div>
 
 <% end %>
+<%= link_to 'Edit', edit_mp3_path(@mp3), :class =>'blue' %> |
 
+<%= link_to 'New Audio', new_mp3_path, :class =>'blue' %>
+</font>
+</td>
+</tr>
+</table>
 <p>
 <%= render :partial => "mp3s/review" %>
 </p>
 
-<%= link_to 'Edit', edit_mp3_path(@mp3) %> |
-<%= link_to 'Back', mp3s_path %>
-
-<%= link_to 'New Mp3', new_mp3_path %>

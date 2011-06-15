@@ -1,0 +1,121 @@
+
+body { margin:40px 50px; font-size:11px; line-height:20px; font-family: Tahoma, Arial; background: url(http://be-at-ease.com/WSLPrototype/images/xg_body.jpg) repeat-x #056caa;}
+/*a { color:#00678F; text-decoration:none;}
+a:hover { text-decoration:none;}
+*/
+a
+{
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 13px;
+color: #00678F;
+text-decoration: none;
+}
+a:active {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 13px;
+color: #00678F;
+}
+a:hover
+{
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 13px;
+color: #00678F;
+text-decoration: underline;
+}
+a:link {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 13px;
+color: #00678F;
+text-decoration: none; }
+a:visited {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 9px;
+color: #00678F;
+text-decoration: none; }
+
+a.menu {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 25px;
+color: #00678F;
+text-decoration: none;	
+}
+
+a.blue {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 12px;
+color: #6CC6EC;
+text-decoration: none;	
+}
+
+a.white{
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 15px;
+color: #FFFFFF;
+text-decoration: none;	
+}
+
+
+table.files {
+	border-width: 1px;
+	border-spacing: 5px;
+	border-style: none;
+	border-color: black;
+	border-collapse: separate;
+	background-color: gray;
+	width: 60%;
+	margin:auto; 
+}
+table.files th {
+	border-width: 0px;
+	padding: 0px;
+	border-style: inset;
+	border-color: gray;
+	background-color: gray;
+}
+table.files td {
+	border-width: 0px;
+	padding: 0px;
+	border-style: inset;
+	border-color: gray;
+	background-color: gray;
+}
+
+table.transparent {
+	border-width: 1px;
+	border-spacing: 5px;
+	border-style: none;
+	border-color: black;
+	border-collapse: separate;
+	background-color: transparent;
+	width: 100%;
+	margin:auto; 
+}
+table.transparent th {
+	border-width: 0px;
+	padding: 0px;
+	border-style: inset;
+	border-color: gray;
+	background-color: transparent;
+}
+table.transparent td {
+	border-width: 0px;
+	padding: 0px;
+	border-style: inset;
+	border-color: gray;
+	background-color: transparent;
+}
+
+
+#join {
+position:absolute;
+left:1370px;
+top:65px;
+width:363px;
+height:586px;
+z-index:1;
+overflow: none;
+visibility: visible;
+}
+#join font table tr td {
+color: #FFF;
+}

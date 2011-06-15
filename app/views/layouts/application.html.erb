@@ -5,10 +5,74 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+
+<script type="text/javascript" src="http://mediaplayer.yahoo.com/js"></script>
+
+<script type="text/javascript" src="http://localhost:8888/WordSoundLife/scripts/soundcloud.player.api.js"></script>
+<script type="text/javascript">
+   soundcloud.addEventListener('onPlayerReady', function(player, data) {
+     player.api_play();
+   });
+</script>
+<script type="text/javascript">
+    var YMPParams =
+    {
+        autoplay:true,
+        volume:0.5,
+        defaultalbumart:'http://i1.sndcdn.com/artworks-000006753887-yxfpjk-crop.jpg?2b64c8d'
+    }
+</script>
+<script type="text/javascript">
+<!--
+function MM_showHideLayers() { //v9.0
+var i,p,v,obj,args=MM_showHideLayers.arguments;
+for (i=0; i<(args.length-2); i+=3) with (document) if (getElementById && ((obj=getElementById(args[i]))!=null)) { v=args[i+2];
+if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+obj.visibility=v; }
+}
+-->
+</script>
+
 </head>
-<body style="background: #999999;">
+<body>
+      <script type="text/javascript">
+         $(document).ready(function() {
+            $(".mediaplayerdialog").mediaplayer({
+               playlist:"playlist.xml"
+            });                    
+         });  	    
+      </script>
+<div align="right"><font color="white">making connections since 2006 </font></div>
+
+<div id="join">
+<embed wmode="opaque" src="http://static.ning.com/socialnetworkmain/widgets/index/swf/badge.swf?v=200911242100" FlashVars="backgroundColor=0x303030&textColor=0x15BFFF&config=http%3A%2F%2Fwordsoundlife.ning.com%2Fmain%2Fbadge%2FshowPlayerConfig%3Fxg_source%3Dbadge%26size%3Dmedium%26username%3Dakwerius" width="180" height="174" bgColor="#303030" scale="noscale" allowScriptAccess="always" allowFullScreen="true" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"> 
+</embed>
+</div>
+<table class="files" > 
+  <tr>
+<td align="center"> 	          
+	    <img src="/images/logo.gif" alt="VNM" style="padding: 16px 0 0 8px" align="center" valign="top" />
+</td>
+</tr>
+<tr>
+<td>
+									<br />
+			    					<div id="nav" align="center" valign="top">
+					    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/" class="menu">Home</a>&nbsp;&nbsp;&nbsp;
+					    <a href="/mp3s" class="menu">Stories</a>&nbsp;&nbsp;&nbsp; 
+					    <a href="http://wordsoundlife.ning.com/profiles/members/" class="menu">Voices</a>&nbsp;&nbsp;&nbsp;
+					    <a href="http://wordsoundlife.ning.com/groups" class="menu">Communities</a>&nbsp;&nbsp;&nbsp;
+					    <a href="/ucberkeley/winners" class="menu">Map</a>&nbsp;&nbsp;&nbsp;
+					</div>
+					<br />
+					<br />
+<br />
+</td>
+</tr>
+</table>
 
 <%= yield %>
+
 
 </body>
 </html>

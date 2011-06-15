@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "main" %>
+
+<table class="files"> 
+<% filename = "Download Your " %>
+<% @checked_mp3s.each do |id| %>
+<%	file = Mp3.find_by_id(id) %>
+<%= filename = filename << file.title %>
+<% end %>
+<%= filename = filename << " Mix" %>
+<tr>
+<td align="center">
+<h1><%= link_to filename, './mixes/outmix.wav', :class => 'menu' %></h1>
+</td>
+</tr>
+</table>
+
+checked_mp3s: <%= @checked_mp3s.inspect %>
+<p></p>
+params: <%= @params.inspect %>
+<p></p>
+command: <%= @command.inspect %>
+<p></p>
+result: <%= @result.inspect  %>
+
+

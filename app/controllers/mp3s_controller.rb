@@ -24,6 +24,33 @@ class Mp3sController < ApplicationController
 
 
 
+  # GET /mp3s/mix
+  # GET /mp3s/mix.xml
+  
+  def mix
+
+	command = "sh ./jobs/mix.sh "
+
+  	@checked_mp3s = params[:checkbox].collect if params[:checkbox]
+
+	@checked_mp3s.each do |id|
+	file = Mp3.find_by_id(id)
+		if !file.url.empty?
+			command = command << " " << file.url
+		end	
+	end
+	
+	result = %x[ #{command} ]
+	
+    respond_to do |format|
+      format.html { render "mp3s/list" }
+      format.xml  { render :xml => @mp3 }
+
+    end
+  end
+
+
+
   # GET /mp3s/filter
   # GET /mp3s/filter.xml
   def filter

@@ -18,6 +18,7 @@ Rortest::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
+match "/mix" => "mp3s#mix"
 match "/filter" => "mp3s#filter"
 match "/rate" => "mp3s#rate"
 match "/new" => "mp3s#new"
