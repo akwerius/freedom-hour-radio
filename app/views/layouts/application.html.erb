@@ -32,6 +32,8 @@ obj.visibility=v; }
 </script>
 
       <script type="text/javascript">
+      alert(window.location.host)
+
 if (GBrowserIsCompatible()) {
 // this variable will collect the html which will eventually be placed in the side_bar
 var side_bar_html = "";
@@ -130,7 +132,7 @@ alert("Sorry, the Google Maps API is not compatible with this browser");
 
 </head>
 <body>
-      <script type="text/javascript">
+<script type="text/javascript">
          $(document).ready(function() {
             $(".mediaplayerdialog").mediaplayer({
                playlist:"playlist.xml"
