@@ -15,12 +15,12 @@
 <table>
   <tr>
   	<th></th>
-    <th><font color="#00678F">Id</font></th>
-    <th><font color="#00678F">Score</font></th>
-    <th><font color="#00678F">Url</font></th>
-    <th><font color="#00678F">Title</font></th>
-    <th><font color="#00678F">Artist</font></th>
-    <th><font color="#00678F">Length</font></th>
+    <th><font color="#FFFFFF">Id</font></th>
+    <th><font color="#FFFFFF">Score</font></th>
+    <th><font color="#FFFFFF">Url</font></th>
+    <th><font color="#FFFFFF">Title</font></th>
+    <th><font color="#FFFFFF">Artist</font></th>
+    <th><font color="#FFFFFF">Length</font></th>
     <th></th>
     <th></th>
     <th></th>
@@ -35,9 +35,7 @@
     <td><font color="white"><%= mp3.title %></font></td>
     <td><font color="white"><%= mp3.artist %></font></td>
     <td><font color="white"><%= mp3.length %></font></td>
-    <td><%= link_to 'Show', mp3 %></td>
-    <td><%= link_to 'Edit', edit_mp3_path(mp3) %></td>
-    <td><%= link_to 'Destroy', mp3, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', mp3, :class=>'blue' %></td>
   </tr>
 <% end %>
 </table>

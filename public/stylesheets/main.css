@@ -54,6 +54,13 @@ color: #FFFFFF;
 text-decoration: none;	
 }
 
+a.grey{
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 13px;
+color: #B2B6BC;
+text-decoration: none;	
+}
+
 
 table.files {
 	border-width: 1px;
@@ -61,7 +68,7 @@ table.files {
 	border-style: none;
 	border-color: black;
 	border-collapse: separate;
-	background-color: gray;
+	background-color: black;
 	width: 60%;
 	margin:auto; 
 }
@@ -69,15 +76,15 @@ table.files th {
 	border-width: 0px;
 	padding: 0px;
 	border-style: inset;
-	border-color: gray;
-	background-color: gray;
+	border-color: black;
+	background-color: black;
 }
 table.files td {
 	border-width: 0px;
 	padding: 0px;
 	border-style: inset;
-	border-color: gray;
-	background-color: gray;
+	border-color: black;
+	background-color: black;
 }
 
 table.transparent {
@@ -108,8 +115,8 @@ table.transparent td {
 
 #join {
 position:absolute;
-left:86%;
-top:65px;
+left:83%;
+top:35px;
 width:363px;
 height:586px;
 z-index:1;
@@ -117,5 +124,19 @@ overflow: none;
 visibility: visible;
 }
 #join font table tr td {
+color: #FFF;
+}
+
+#sidebar {
+position:absolute;
+left:83%;
+top:190px;
+width:363px;
+height:686px;
+z-index:1;
+overflow: none;
+visibility: visible;
+}
+#sidebar font table tr td {
 color: #FFF;
 }

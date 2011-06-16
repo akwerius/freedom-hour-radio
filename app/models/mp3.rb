@@ -1,5 +1,10 @@
 class Mp3 < ActiveRecord::Base
 
+
+def count_recordings
+  self.all.count
+end
+
 def count_reviews
   self.reviews.all.count
 end

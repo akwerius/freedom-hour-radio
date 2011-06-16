@@ -27,104 +27,6 @@ obj.visibility=v; }
 -->
 </script>
 
-      <script type="text/javascript">
-
-if (GBrowserIsCompatible()) {
-// this variable will collect the html which will eventually be placed in the side_bar
-var side_bar_html = "";
-// arrays to hold copies of the markers used by the side_bar
-// because the function closure trick doesn't work there
-var gmarkers = [];
-var i = 0;
-
-		var map = new GMap2(document.getElementById("map"));
-
-		map.addControl(new GLargeMapControl());
-		map.addControl(new GMapTypeControl());
-		map.setCenter(new GLatLng(39.58,-107.79), 11);      	
-
-// A function to create the marker and set up the event window
-function createSiteMarker(point,name, html, markerOptions) {
-var marker = new GMarker(point, markerOptions);
-GEvent.addListener(marker, "click", function() {
-marker.openInfoWindowHtml(html);
-});
-// save the info we need to use later for the side_bar
-gmarkers[i] = marker;
-// add a line to the side_bar html
-side_bar_html += '<a href="javascript:myclick(' + i + ')">' + name + '</a><br>';
-i++;
-return marker;
-}
-
-// A function to create the marker and set up the event window
-function createMarker(point,name,html) {
-
-var marker = new GMarker(point);
-GEvent.addListener(marker, "click", function() {
-marker.openInfoWindowHtml(html);
-});
-// save the info we need to use later for the side_bar
-gmarkers[i] = marker;
-// add a line to the side_bar html
-side_bar_html += '<a href="javascript:myclick(' + i + ')">' + name + '</a><br>';
-i++;
-return marker;
-}
-
-// This function picks up the click and opens the corresponding info window
-function myclick(i) {
-GEvent.trigger(gmarkers[i], "click");
-}
-
-var request = GXmlHttp.create();
-request.open("GET", "../../vnm/swap/pals.xml", true);
-request.onreadystatechange = function() {
-if (request.readyState == 4) {
-var xmlDoc = GXml.parse(request.responseText);
-// obtain the array of markers and loop through it
-var markers = xmlDoc.documentElement.getElementsByTagName("marker");
-for (var i = 0; i < markers.length; i++) {
-// obtain the attribues of each marker
-var lat = parseFloat(markers[i].getAttribute("lat"));
-var lng = parseFloat(markers[i].getAttribute("long"));
-var point = new GLatLng(lat,lng); 
-
-var label = markers[i].getAttribute("label");
-if (markers[i].getAttribute("loc") == "Rifle") {
-//html = '<table><tr><td>'
-var html = '<table><tr><td>' + GXml.value(markers[i].getElementsByTagName("name")[0]);
-var logo = GXml.value(markers[i].getElementsByTagName("image")[0]);
-html += '<br><img width="120" height="98" src="' + logo + '"/><br>';
-var recording = GXml.value(markers[i].getElementsByTagName("url")[0])
-html += '<embed type="application/x-shockwave-flash" src="http://www.google.com/reader/ui/3247397568-audio-player.swf?audioUrl=' + recording + '" width="200" height="27" allowscriptaccess="never" quality="best" bgcolor="#ffffff" wmode="window" flashvars="playerMode=embedded" /><br>';
-html += '</td><td><img src="http://be-at-ease.com/vnm/images/separator.jpg"></td><td>';
-
-html += GXml.value(markers[i].getElementsByTagName("name")[1]);
-var logo = GXml.value(markers[i].getElementsByTagName("image")[1]);
-html += '<br><img width="120" height="98" src="' + logo + '"/><br>';
-var recording = GXml.value(markers[i].getElementsByTagName("url")[1])
-html += '<embed type="application/x-shockwave-flash" src="http://www.google.com/reader/ui/3247397568-audio-player.swf?audioUrl=' + recording + '" width="200" height="27" allowscriptaccess="never" quality="best" bgcolor="#ffffff" wmode="window" flashvars="playerMode=embedded" />';
-html += '</td></tr></table>';
-
-//html += label;
-// create the marker
-var marker = createMarker(point,label,html);
-map.addOverlay(marker);
-}
-}
-
-// put the assembled side_bar_html contents into the side_bar div
-document.getElementById("side_bar").innerHTML = side_bar_html;
-}
-}
-request.send(null);
-}
-else {
-alert("Sorry, the Google Maps API is not compatible with this browser");
-}
-      </script>
-
 </head>
 <body>
 <script type="text/javascript">
@@ -134,17 +36,43 @@ alert("Sorry, the Google Maps API is not compatible with this browser");
             });                    
          });  	    
       </script>
-<div align="right"><font color="white">making connections since 2006 </font></div>
 
 <div id="join">
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="white">making connections since 2006 </font><br>
 <embed wmode="opaque" src="http://static.ning.com/socialnetworkmain/widgets/index/swf/badge.swf?v=200911242100" FlashVars="backgroundColor=0x303030&textColor=0x15BFFF&config=http%3A%2F%2Fwordsoundlife.ning.com%2Fmain%2Fbadge%2FshowPlayerConfig%3Fxg_source%3Dbadge%26size%3Dmedium%26username%3Dakwerius" width="180" height="174" bgColor="#303030" scale="noscale" allowScriptAccess="always" allowFullScreen="true" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"> 
 </embed>
 </div>
+<br><br>
 <table class="files" > 
   <tr>
 <td align="center"> 	          
-	    <img src="/images/logo.gif" alt="VNM" style="padding: 16px 0 0 8px" align="center" valign="top" />
-</td>
+	    <img src="/images/logo.gif" alt="VNM" style="padding: 16px 0 0 8px; vertical-align: bottom;" align="center" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="/events" class="white"><strong><small>
+<script language="javascript">
+
+Today = new Date();
+TodayDay = Today.getDate();
+TodayMon = Today.getMonth();
+TodayYear = Today.getYear();
+
+if (TodayMon == 0) { TodayMonth = "January"; }
+else if (TodayMon == 1) { TodayMonth = "February"; }
+else if (TodayMon == 2) { TodayMonth = "March"; }
+else if (TodayMon == 3) { TodayMonth = "April"; }
+else if (TodayMon == 4) { TodayMonth = "May"; }
+else if (TodayMon == 5) { TodayMonth = "June"; }
+else if (TodayMon == 6) { TodayMonth = "July"; }
+else if (TodayMon == 7) { TodayMonth = "August"; }
+else if (TodayMon == 8) { TodayMonth = "September"; }
+else if (TodayMon == 9) { TodayMonth = "October"; }
+else if (TodayMon == 10) { TodayMonth = "November"; }
+else if (TodayMon == 11) { TodayMonth = "December"; }
+else { TodayMonth = TodayMon; }
+
+document.write(TodayMonth + " " + TodayDay + ", 2011");
+
+</script></small></strong>
+</a></td>
 </tr>
 <tr>
 <td>
@@ -154,11 +82,8 @@ alert("Sorry, the Google Maps API is not compatible with this browser");
 					    <a href="/mp3s" class="menu">Browse</a>&nbsp;&nbsp;&nbsp; 
 					    <a href="http://wordsoundlife.ning.com/profiles/members/" class="menu">Voices</a>&nbsp;&nbsp;&nbsp;
 					    <a href="http://wordsoundlife.ning.com/groups" class="menu">Arenas</a>&nbsp;&nbsp;&nbsp;
-					    <a href="/map" class="menu">Map</a>&nbsp;&nbsp;&nbsp;
+					    <a href="/map" class="menu">Camp</a>&nbsp;&nbsp;&nbsp;
 					</div>
-					<br />
-					<br />
-<br />
 </td>
 </tr>
 </table>
