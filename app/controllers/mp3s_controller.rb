@@ -11,6 +11,14 @@ class Mp3sController < ApplicationController
     end
   end
 
+  # GET /map
+  def map
+ 	
+    respond_to do |format|
+      format.html # map.html.erb
+    end
+  end
+
 
   # GET /mp3s/rate
   # GET /mp3s/rate.xml
